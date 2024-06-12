@@ -1,16 +1,30 @@
-import { useState } from 'react'
-
+import { useState } from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import HomePage from './Pages/HomePage';
+import Message from './Pages/Messages';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className="text-3xl text-blue-500 text-center font-mono">
-      Hello world! 
-      Hello
-    </h1>
-    </>
+    
+    <div className='bg-slate-300  min-h-screen '>
+     
+    <BrowserRouter>
+    
+    <Routes>
+    <Route path='/' element={<HomePage/>}/>
+      <Route path='message' element={<Message/>}/>
+
+    </Routes>
+    </BrowserRouter>
+    
+    </div>
+   
+    
+ </>
+      
   )
 }
 
